@@ -1,0 +1,230 @@
+{% extends "appweb/base.html" %}
+
+{% block header %}
+    <div class="text-center">
+        <h1 class="display-3">{{ title }}</h1>
+    </div>
+{% endblock %}
+{% block content %}
+    {# Affichage de Temps Ecouler et saisie temps et nombre de joueurs #}
+    <div class="container border" id="tempsManager">
+        <form class="row justify-content-center mt-3">
+
+            <label>
+                <p class="d-inline">Nombre de Joueur: </p>
+                <input class="d-inline small" type="number" min="0" max="10">
+            </label>
+
+            <label>
+                <p class="d-inline">Temps</p>
+                <input class="d-inline small" type="time">
+            </label>
+            <label>
+                <p class="d-inline">Cave:</p>
+                <input class="d-inline small" type="number" min="0">
+            </label>
+
+
+        </form>
+        <div class="container">
+            <div class="row display-3 justify-content-center mt-2" id="tempEcouler">00:00:00</div>
+        </div>
+
+    </div>
+
+    {# Tableau des blinds #}
+    <div class="row mt-3">
+        <div class="col-6">
+            <h3>Les blinds:</h3>
+            <table class="table table-bordered table-sm table-light small text-center">
+                <thead class="thead-dark ">
+                <tr>
+                    <th>Temps</th>
+                    <th>Small blind</th>
+                    <th>Big blind</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{ valeurTemp }}</td>
+                    <td>
+                        <label>
+                            <input class="d-inline small " type="number" min="0">
+                        </label></td>
+                    <td>{{ valeurBigBlind }}</td>
+                </tr>
+                <tr>
+                    <td>{{ valeurTemp }}</td>
+                    <td>
+                        <label>
+                            <input class="d-inline small " type="number" min="0">
+                        </label>
+                    </td>
+                    <td>{{ valeurBigBlind }}</td>
+                </tr>
+                <tr>
+                    <td>{{ valeurTemp }}</td>
+                    <td>
+                        <label>
+                            <input class="d-inline small " type="number" min="0">
+                        </label></td>
+                    <td>{{ valeurBigBlind }}</td>
+                </tr>
+                <tr>
+                    <td>{{ valeurTemp }}</td>
+                    <td>
+                        <label>
+                            <input class="d-inline small " type="number" min="0">
+                        </label>
+                    </td>
+
+                    <td>{{ valeurBigBlind }}</td>
+                </tr>
+                <tr>
+                    <td>{{ valeurTemp }}</td>
+                    <td>
+                        <label>
+                            <input class="d-inline small " type="number" min="0">
+                        </label>
+                    </td>
+                    <td>{{ valeurBigBlind }}</td>
+                </tr>
+                <tr>
+                    <td>{{ valeurTemp }}</td>
+                    <td>
+                        <label>
+                            <input class="d-inline small " type="number" min="0">
+                        </label>
+                    </td>
+                    <td>{{ valeurBigBlind }}</td>
+                </tr>
+                <tr>
+                    <td>{{ valeurTemp }}</td>
+                    <td>
+                        <label>
+                            <input class="d-inline small " type="number" min="0">
+                        </label>
+                    </td>
+                    <td>{{ valeurBigBlind }}</td>
+                </tr>
+                <tr>
+                    <td>{{ valeurTemp }}</td>
+                    <td>
+                        <label>
+                            <input class="d-inline small " type="number" min="0">
+                        </label>
+                    </td>
+                    <td>{{ valeurBigBlind }}</td>
+                </tr>
+
+
+                </tbody>
+
+            </table>
+        </div>
+{# Tableau jetons #}
+        <div class="col-6">
+            <h3>Jetons</h3>
+            <table class="table table-bordered table-light table-sm small text-center">
+                <thead class="thead-dark text-center">
+                <tr>
+                    <th>Couleurs</th>
+                    <th>Valeurs</th>
+                    <th>Nombres de jetons</th>
+                    <th>Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td id="testColor0">
+                        <select id="color0" class="col-12">
+                            <option value="rouge" class="optRouge">Rouge</option>
+                            <option value="bleu" class="optBleu">Bleu</option>
+                            <option value="orange" class="optOrange">Orange</option>
+                            <option value="vert" class="optVert">Vert</option>
+                            <option value="noir" class="optNoir">Noir</option>
+                            <option value="marron" class="optMarron">Marron</option>
+                        </select>
+                    </td>
+                    <td>5</td>
+                    <td>20</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td id="testColor1">
+                        <select id="color1" class="col-12">
+                            <option value="rouge" class="optRouge">Rouge</option>
+                            <option value="bleu" class="optBleu">Bleu</option>
+                            <option value="orange" class="optOrange">Orange</option>
+                            <option value="vert" class="optVert">Vert</option>
+                            <option value="noir" class="optNoir">Noir</option>
+                            <option value="marron" class="optMarron">Marron</option>
+                        </select>
+                    </td>
+                    <td>10</td>
+                    <td>20</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td class="">
+                        <select id="color2" class="col-12">
+                            <option value="rouge" class="optRouge">Rouge</option>
+                            <option value="bleu" class="optBleu">Bleu</option>
+                            <option value="orange" class="optOrange">Orange</option>
+                            <option value="vert" class="optVert">Vert</option>
+                            <option value="noir" class="optNoir">Noir</option>
+                            <option value="marron" class="optMarron">Marron</option>
+                        </select>
+                    </td>
+                    <td>25</td>
+                    <td>10</td>
+                    <td>250</td>
+                </tr>
+                <tr>
+                    <td>
+                        <select id="color3" class="col-12">
+                            <option value="rouge" class="optRouge">Rouge</option>
+                            <option value="bleu" class="optBleu">Bleu</option>
+                            <option value="orange" class="optOrange">Orange</option>
+                            <option value="vert" class="optVert">Vert</option>
+                            <option value="noir" class="optNoir">Noir</option>
+                            <option value="marron" class="optMarron">Marron</option>
+                        </select>
+                    </td>
+                    <td>50</td>
+                    <td>10</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>
+                        <select id="color4" class="col-12">
+                            <option value="rouge" class="optRouge">Rouge</option>
+                            <option value="bleu" class="optBleu">Bleu</option>
+                            <option value="orange" class="optOrange">Orange</option>
+                            <option value="vert" class="optVert">Vert</option>
+                            <option value="noir" class="optNoir">Noir</option>
+                            <option value="marron" class="optMarron">Marron</option>
+                        </select>
+                    </td>
+                    <td>100</td>
+                    <td>10</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>Totaux</td>
+                    <td></td>
+                    <td></td>
+                    <td>2050</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+
+
+
+{% endblock content %}

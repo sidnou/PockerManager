@@ -1,0 +1,63 @@
+body {
+    background: darkgreen;
+}
+
+H1, H2, H3, p {
+    color: white;
+}
+
+H1 {
+    font-family: 'Suez One', bold, serif;
+    color: black;
+}
+
+input {
+    /*Retirer les flèches */
+    -moz-appearance: textfield;
+}
+
+select {
+    -moz-appearance: textfield;
+    color: white;
+    font-family: 'Oswald', sans-serif, bold;
+    text-align: center;
+}
+
+#tempsManager {
+    height: 20em;
+}
+
+#tempEcouler {
+    font-family: 'Saira Stencil One', cursive;
+    color: black;
+}
+
+.optNoir {
+    background: black;
+    color: white;
+}
+
+.optRouge {
+    background: red;
+    color: white;
+}
+
+.optVert {
+    background: green;
+    color: white;
+}
+
+.optOrange {
+    background: orange;
+    color: white;
+}
+
+.optBleu {
+    background: blue;
+    color: white;
+}
+
+.optMarron {
+    background: brown;
+    color: white;
+}
