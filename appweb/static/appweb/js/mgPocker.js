@@ -113,3 +113,15 @@ $('#color1').change(bgcolor);
 $('#color2').change(bgcolor);
 $('#color3').change(bgcolor);
 $('#color4').change(bgcolor);
+
+// fonction temps blinds
+function tempsBlind() {
+    var tblinds = $('#tempBlinds').val();
+    console.log(tblinds);
+    $('#tempOfBlind0').html(tblinds);
+
+
+}
+
+$(document).ready(tempsBlind);
+$('#tempBlinds').change(tempsBlind);

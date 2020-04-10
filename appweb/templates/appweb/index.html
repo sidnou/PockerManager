@@ -15,20 +15,24 @@
                 <input class="d-inline small" type="number" min="0" max="10">
             </label>
 
-            <label>
+            <label for="tempBlinds">
                 <p class="d-inline">Temps</p>
-                <input class="d-inline small" type="time">
+                <input class="d-inline small" type="time" name="tempsBlinds" id="tempBlinds">
             </label>
             <label>
                 <p class="d-inline">Cave:</p>
                 <input class="d-inline small" type="number" min="0">
             </label>
 
-
+            <div class="container">
+                <div class="row display-3 justify-content-center mt-2" id="tempEcouler">00:00:00</div>
+            </div>
+            <div>
+                <button>Start</button>
+                <button>Pause</button>
+                <button>Stop</button>
+            </div>
         </form>
-        <div class="container">
-            <div class="row display-3 justify-content-center mt-2" id="tempEcouler">00:00:00</div>
-        </div>
 
     </div>
 
@@ -47,15 +51,16 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>{{ valeurTemp }}</td>
+                    <td id="tempOfBlind0"></td>
                     <td>
                         <label>
                             <input class="d-inline small " type="number" min="0">
-                        </label></td>
+                        </label>
+                    </td>
                     <td>{{ valeurBigBlind }}</td>
                 </tr>
                 <tr>
-                    <td>{{ valeurTemp }}</td>
+                    <td id="tempOfBlind1">{{ valeurTemp }}</td>
                     <td>
                         <label>
                             <input class="d-inline small " type="number" min="0">
@@ -123,7 +128,7 @@
 
             </table>
         </div>
-{# Tableau jetons #}
+        {# Tableau jetons #}
         <div class="col-6">
             <h3>Jetons</h3>
             <table class="table table-bordered table-light table-sm small text-center">

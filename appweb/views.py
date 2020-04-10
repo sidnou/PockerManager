@@ -15,4 +15,6 @@ def index(request):
         'valeurSmBlind': "5",
         'valeurBigBlind': "10",
     }
+
+
     return render(request, 'appweb/index.html', content)
