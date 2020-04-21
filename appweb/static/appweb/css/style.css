@@ -2,7 +2,7 @@ body {
     background: darkgreen;
 }
 
-H1, H2, H3, p {
+H1, H2, H3,p{
     color: white;
 }
 
@@ -23,11 +23,15 @@ select {
     text-align: center;
 }
 
-#tempsManager {
+#MonModal p {
+    color:black;
+}
+
+#TempsManager {
     height: 20em;
 }
 
-#tempEcouler {
+#TempEcouler {
     font-family: 'Saira Stencil One', cursive;
     color: black;
 }

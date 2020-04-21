@@ -8,7 +8,8 @@ COLOR_JETONS = [('RED', 'Rouge'), ('BLUE', 'Bleu'), ('GREEN', 'Vert'), ('BLACK',
 # Create your models here.
 # Tableua de
 class Joueurs(models.Model):
-    nombreJoueur = models.IntegerField(max_length=2,)
+    nombre_joueur = models.IntegerField()
+
 
 # Tableau Jetons
 class Jetons(models.Model):
@@ -22,3 +23,10 @@ class Blinds(models.Model):
     times = models.TimeField()
     smallBlind = models.IntegerField()
     bigBlind = models.IntegerField()
+
+
+# Tableau tournois
+class Tournois(models.Model):
+    name_tournoi = models.CharField(max_length=25,null=False)
+    n_game = models.ForeignKey(Joueurs, on_delete=models.CASCADE)
+    t_game = models.ForeignKey(Blinds, on_delete=models.CASCADE)

@@ -1,0 +1,12 @@
+{% extends 'appweb/base.html' %}
+{% block content %}
+    {% csrf_token %}
+    <form>
+     {{ forms }}
+    </form>
+    <form>
+     {{ forms1 }}
+    </form>
+
+
+{% endblock content %}
