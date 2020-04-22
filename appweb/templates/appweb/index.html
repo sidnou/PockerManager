@@ -1,7 +1,7 @@
 {% extends "appweb/base.html" %}
 
 {% block header %}
-    <div class="text-center">
+    <div class="text-center" xmlns="http://www.w3.org/1999/html">
         <h1 class="display-3">{{ title }}</h1>
     </div>
 {% endblock %}
@@ -20,28 +20,18 @@
                     </div>
                     {# Modale body #}
                     <div class="modal-body">
-                        <form action="" method="POST" class="">
-                            <label for="nombreJoueurs" class="">
-                                <p class=" ">Nombre de Joueur: </p>
-                                <input class="" type="number" min="2" max="10" value="2">
-                            </label>
-
-                            <label for="tempBlinds" class="">
-                                <p class=" ">Temps</p>
-                                <input class=" " type="time" name="tempsBlinds" id="TempBlinds" value="00:00"
-                                       step="300">
-                            </label>
-                            <label for="cave" class="">
-                                <p class=" ">Cave:</p>
-                                <input class=" " type="number" min="0">
-                            </label>
+                        <form action="{% url 'home' %}" method="POST" class="">
+                            {% csrf_token %}
+                            {{ forms.as_p }}
+                            <input type="submit" value="Créer" class="btn-success">
                         </form>
                     </div>
                     {# Modale Footer #}
                     <div class="modal-footer">
                         <div class="">
 
-                            <button type="submit" class="btn btn-lg btn-success ">Créer</button>
+{#                            <input type="submit" class="btn btn-lg btn-success" value="submit">#}
+                            <button type="submit" class="btn-success" value="submit">Créer</button>
 
                         </div>
                     </div>
@@ -182,7 +172,8 @@
                 <tbody>
                 <tr>
                     <td id="testColor0">
-                        <select id="color0" class="col-12">
+                        <label for="color0">
+                            <select id="color0" class="col-12">
                             <option value="rouge" class="optRouge">Rouge</option>
                             <option value="bleu" class="optBleu">Bleu</option>
                             <option value="orange" class="optOrange">Orange</option>
@@ -190,6 +181,8 @@
                             <option value="noir" class="optNoir">Noir</option>
                             <option value="marron" class="optMarron">Marron</option>
                         </select>
+                        </label>
+
                     </td>
                     <td>5</td>
                     <td>20</td>
@@ -197,7 +190,8 @@
                 </tr>
                 <tr>
                     <td id="testColor1">
-                        <select id="color1" class="col-12">
+                        <label for="color1">
+                             <select id="color1" class="col-12">
                             <option value="rouge" class="optRouge">Rouge</option>
                             <option value="bleu" class="optBleu">Bleu</option>
                             <option value="orange" class="optOrange">Orange</option>
@@ -205,6 +199,8 @@
                             <option value="noir" class="optNoir">Noir</option>
                             <option value="marron" class="optMarron">Marron</option>
                         </select>
+                        </label>
+
                     </td>
                     <td>10</td>
                     <td>20</td>
@@ -212,7 +208,8 @@
                 </tr>
                 <tr>
                     <td class="">
-                        <select id="color2" class="col-12">
+                        <label for="color2">
+                            <select id="color2" class="col-12">
                             <option value="rouge" class="optRouge">Rouge</option>
                             <option value="bleu" class="optBleu">Bleu</option>
                             <option value="orange" class="optOrange">Orange</option>
@@ -220,6 +217,8 @@
                             <option value="noir" class="optNoir">Noir</option>
                             <option value="marron" class="optMarron">Marron</option>
                         </select>
+                        </label>
+
                     </td>
                     <td>25</td>
                     <td>10</td>
@@ -227,7 +226,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <select id="color3" class="col-12">
+                        <label for="color3">
+                            <select id="color3" class="col-12">
                             <option value="rouge" class="optRouge">Rouge</option>
                             <option value="bleu" class="optBleu">Bleu</option>
                             <option value="orange" class="optOrange">Orange</option>
@@ -235,6 +235,8 @@
                             <option value="noir" class="optNoir">Noir</option>
                             <option value="marron" class="optMarron">Marron</option>
                         </select>
+                        </label>
+
                     </td>
                     <td>50</td>
                     <td>10</td>
@@ -242,7 +244,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <select id="color4" class="col-12">
+                        <label for="color4">
+                             <select id="color4" class="col-12">
                             <option value="rouge" class="optRouge">Rouge</option>
                             <option value="bleu" class="optBleu">Bleu</option>
                             <option value="orange" class="optOrange">Orange</option>
@@ -250,6 +253,8 @@
                             <option value="noir" class="optNoir">Noir</option>
                             <option value="marron" class="optMarron">Marron</option>
                         </select>
+                        </label>
+
                     </td>
                     <td>100</td>
                     <td>10</td>

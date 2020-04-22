@@ -125,3 +125,5 @@ function tempsBlind() {
 
 $(document).ready(tempsBlind);
 $('#tempBlinds').change(tempsBlind);
+
+

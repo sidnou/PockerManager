@@ -27,6 +27,13 @@ class Blinds(models.Model):
 
 # Tableau tournois     <<< mettre à jour le table Tournois
 class Tournois(models.Model):
-    name_tournoi = models.CharField(max_length=25,null=False)
+    name_tournoi = models.CharField(max_length=25, null=False)
     n_game = models.ForeignKey(Joueurs, on_delete=models.CASCADE)
     t_game = models.ForeignKey(Blinds, on_delete=models.CASCADE)
+
+
+# # Tableau journal Poker Manager
+# class PokerManagerLog(models.Model):
+#     message = models.TextField()
+#     type_journal = models.CharField(max_length=50)
+#     date_journal = models.DateField(auto_now=True)

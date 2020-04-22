@@ -19,6 +19,7 @@ from appweb import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('', views.index, name='home'),
     path('testviewweb', views.testviewweb, name='testview'),
+    path('create-tournoi', views.createTournois, name='create-tournoi'),
 ]
