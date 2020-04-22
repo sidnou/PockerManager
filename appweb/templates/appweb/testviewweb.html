@@ -1,8 +1,10 @@
 {% extends 'appweb/base.html' %}
 {% block content %}
+
+    <form action="{%  url 'testview' %}" method="post">
     {% csrf_token %}
-    <form>
-     {{ forms }}
+     {{ forms.as_p }}
+    <input type="submit" value="submit">
     </form>
     <form>
      {{ forms1 }}

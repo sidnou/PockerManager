@@ -25,7 +25,7 @@ class Blinds(models.Model):
     bigBlind = models.IntegerField()
 
 
-# Tableau tournois
+# Tableau tournois     <<< mettre à jour le table Tournois
 class Tournois(models.Model):
     name_tournoi = models.CharField(max_length=25,null=False)
     n_game = models.ForeignKey(Joueurs, on_delete=models.CASCADE)

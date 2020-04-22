@@ -20,5 +20,5 @@ from appweb import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('testviewweb',views.testviewweb),
+    path('testviewweb', views.testviewweb, name='testview'),
 ]

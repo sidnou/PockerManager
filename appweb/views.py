@@ -14,6 +14,7 @@ def index(request):
         'valeurTemp': "00h15",
         'valeurSmBlind': "5",
         'valeurBigBlind': "10",
+
     }
 
     return render(request, 'appweb/index.html', content)
@@ -27,7 +28,6 @@ def testviewweb(request):
         'valeurTemp': "00h15",
         'valeurSmBlind': "5",
         'valeurBigBlind': "10",
-        'forms': FormulaireTest,
-        'forms1': FormulaireTestMeta,
+        'forms': '',
     }
     return render(request, 'appweb.testviewweb.html',content )
