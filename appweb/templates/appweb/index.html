@@ -26,15 +26,6 @@
                             <input type="submit" value="Créer" class="btn-success">
                         </form>
                     </div>
-                    {# Modale Footer #}
-                    <div class="modal-footer">
-                        <div class="">
-
-{#                            <input type="submit" class="btn btn-lg btn-success" value="submit">#}
-                            <button type="submit" class="btn-success" value="submit">Créer</button>
-
-                        </div>
-                    </div>
 
                 </div>
 
@@ -48,7 +39,7 @@
 
     {# Affichage de Temps Ecouler et saisie temps et nombre de joueurs #}
     <div class="container border" id="TempsManager">
-        <form class="row justify-content-center mt-3">
+        <form action="{% url 'home' %}" class="row justify-content-center mt-3">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MonModal">Création
                 Tournoie
             </button>
@@ -57,9 +48,9 @@
                 <div class="row display-3 justify-content-center mt-2" id="TempEcouler">00:00:00</div>
             </div>
             <div>
-                <button>Start</button>
-                <button>Pause</button>
-                <button>Stop</button>
+                <input type="submit" class="button" value="START">
+                <input type="submit" class="button" value="PAUSE">
+                <input type="submit" class="button" value="STOP">
             </div>
         </form>
 

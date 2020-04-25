@@ -8,7 +8,8 @@ COLOR_JETONS = [('RED', 'Rouge'), ('BLUE', 'Bleu'), ('GREEN', 'Vert'), ('BLACK',
 # Create your models here.
 # Tableua de
 class Joueurs(models.Model):
-    nombre_joueur = models.IntegerField()
+    nom_joueur = models.CharField(max_length=25)
+
 
 
 # Tableau Jetons
@@ -27,9 +28,10 @@ class Blinds(models.Model):
 
 # Tableau tournois     <<< mettre à jour le table Tournois
 class Tournois(models.Model):
-    name_tournoi = models.CharField(max_length=25, null=False)
-    n_game = models.ForeignKey(Joueurs, on_delete=models.CASCADE)
-    t_game = models.ForeignKey(Blinds, on_delete=models.CASCADE)
+    nombre_joueur = models.IntegerField()
+    temps_blinds = models.DateTimeField(null=True)
+    cave = models.IntegerField(null=True)
+    temps_recave = models.DateTimeField(null=True)
 
 
 # # Tableau journal Poker Manager

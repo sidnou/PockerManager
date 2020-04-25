@@ -1,8 +1,8 @@
-from django.shortcuts import render , redirect
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from appweb.forms import *
-from appweb.models import *
+from appweb.models import Tournois, Joueurs, Jetons
 
 import datetime
 
@@ -25,26 +25,37 @@ def index(request):
     }
     # Verification de method P
     if request.method == 'POST':
-        form0 = FormModulaTournoi(request.POST)
-        print(form0)
-        content['forms'] = form0
+        form = FormModulaTournoi(request.POST)
+        content['forms'] = form
 
-        if form0.is_valid():
-            n_gamer = form0.cleaned_data['nombre_joueur']
+        if form.is_valid():
+            # Nombre de joueur
+            n_gamer = form.cleaned_data['nombre_joueur']
             print(n_gamer)
-            t_blinds = form0.cleaned_data['temps_blinds']
-            print(type(form0.cleaned_data['temps_blinds']))
+            n_gamer_tournoi = Tournois(nombre_joueur=n_gamer)
+            n_gamer_tournoi.save()  # savegarde dans la tableau Tournois
+            # Temps de blind
+            t_blinds = form.cleaned_data['temps_blinds']
+            t_blinds_tournoi = Tournois(temps_blinds=t_blinds)
+            t_blinds_tournoi.save()  # savegarde dans la tableau Tournois
+            print(t_blinds)
+            # Cave
+            cave = form.cleaned_data['cave']
+            print(cave)
+            # cave_tournoi = Tournois(cave=cave)
+            # cave_tournoi.save()  # savegarde dans la tableau Tournois
+
             content['valeurTemp'] = t_blinds
             # return render(request,'appweb/index.html', content)
             # return HttpResponseRedirect(reverse('home'))
     else:
-        form0 = FormModulaTournoi()
-        content['forms'] = form0
+        form = FormModulaTournoi()
+        content['forms'] = form
 
     return render(request, 'appweb/index.html', content)
 
 
-def createTournois(request):
+def create_tournois(request):
     content = {
         'title': "Poker Manager",
         'version': VERSION,

@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='home'),
     path('testviewweb', views.testviewweb, name='testview'),
-    path('create-tournoi', views.createTournois, name='create-tournoi'),
+    path('create-tournoi', views.create_tournois, name='create-tournoi'),
 ]
