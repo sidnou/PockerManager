@@ -1,10 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from appweb.forms import *
-from appweb.models import Tournois, Joueurs, Jetons
-
-import datetime
+from appweb.models import Tournois
 
 # Variables CONSTANTS
 VERSION = '0.0.1'
@@ -32,22 +30,22 @@ def index(request):
             # Nombre de joueur
             n_gamer = form.cleaned_data['nombre_joueur']
             print(n_gamer)
-            n_gamer_tournoi = Tournois(nombre_joueur=n_gamer)
-            n_gamer_tournoi.save()  # savegarde dans la tableau Tournois
             # Temps de blind
             t_blinds = form.cleaned_data['temps_blinds']
-            t_blinds_tournoi = Tournois(temps_blinds=t_blinds)
-            t_blinds_tournoi.save()  # savegarde dans la tableau Tournois
             print(t_blinds)
+            content['valeurTemp'] = t_blinds  # ajoute le temps de blind à la page home
             # Cave
             cave = form.cleaned_data['cave']
             print(cave)
-            # cave_tournoi = Tournois(cave=cave)
-            # cave_tournoi.save()  # savegarde dans la tableau Tournois
+            # Temps limit recave
+            t_recave = form.cleaned_data['temps_recave']
 
-            content['valeurTemp'] = t_blinds
-            # return render(request,'appweb/index.html', content)
-            # return HttpResponseRedirect(reverse('home'))
+            add_tournois = Tournois(nombre_joueur=n_gamer, temps_blinds=t_blinds, cave=cave, temps_recave=t_recave)
+            add_tournois.save()  # savegarde dans la tableau Tournois
+
+        # return render(request,'appweb/index.html', content)
+        return HttpResponseRedirect(reverse('home'))
+
     else:
         form = FormModulaTournoi()
         content['forms'] = form
@@ -91,25 +89,26 @@ def testviewweb(request):
         'valeurTemp': "00h15",
         'valeurSmBlind': "5",
         'valeurBigBlind': "10",
-        'forms': '',
+        'forms': FormulaireTest1,
     }
-    if request.method == 'POST':
-        forms_test = FormulaireTest(request.POST)
-        print(forms)
-        content['forms'] = forms_test
-        if forms_test.is_valid():
-            print('nombre de joueurs:', forms_test.cleaned_data['nombre_joueur'])
-            print('temps des blinds:', forms_test.cleaned_data['temps_blinds'])
-            nombre_joueurs = Joueurs(nombre_joueur=forms_test.cleaned_data['nombre_joueur'])
-            nombre_joueurs.save()
-            temps_blinds = forms_test.cleaned_data['temps_blinds'].minute * 2
-            print(temps_blinds)
+    # if request.method == 'POST':
 
-
-
-
-    else:
-        forms_test = FormulaireTest()
-        content['forms'] = forms_test
+    #     forms_test = FormulaireTest(request.POST)
+    #     print(forms)
+    #     content['forms'] = forms_test
+    #     if forms_test.is_valid():
+    #         print('nombre de joueurs:', forms_test.cleaned_data['nombre_joueur'])
+    #         print('temps des blinds:', forms_test.cleaned_data['temps_blinds'])
+    #         nombre_joueurs = Joueurs(nombre_joueur=forms_test.cleaned_data['nombre_joueur'])
+    #         nombre_joueurs.save()
+    #         temps_blinds = forms_test.cleaned_data['temps_blinds'].minute * 2
+    #         print(temps_blinds)
+    #
+    #
+    #
+    #
+    # else:
+    #     forms_test = FormulaireTest()
+    #     content['forms'] = forms_test
 
     return render(request, 'appweb/testviewweb.html', content)

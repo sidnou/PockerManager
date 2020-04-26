@@ -29,9 +29,9 @@ class Blinds(models.Model):
 # Tableau tournois     <<< mettre à jour le table Tournois
 class Tournois(models.Model):
     nombre_joueur = models.IntegerField()
-    temps_blinds = models.DateTimeField(null=True)
+    temps_blinds = models.TimeField(null=True)
     cave = models.IntegerField(null=True)
-    temps_recave = models.DateTimeField(null=True)
+    temps_recave = models.TimeField(null=True)
 
 
 # # Tableau journal Poker Manager
