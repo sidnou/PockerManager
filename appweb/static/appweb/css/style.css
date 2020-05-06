@@ -2,7 +2,7 @@ body {
     background: darkgreen;
 }
 
-H1, H2, H3,p{
+H1, H2, H3, p {
     color: white;
 }
 
@@ -24,7 +24,7 @@ select {
 }
 
 #MonModal p {
-    color:black;
+    color: black;
 }
 
 #TempsManager {

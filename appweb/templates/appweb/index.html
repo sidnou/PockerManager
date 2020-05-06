@@ -1,385 +1,386 @@
 {% extends "appweb/base.html" %}
 
 {% block header %}
-    <div class="text-center" xmlns="http://www.w3.org/1999/html">
-        <h1 class="display-3">{{ title }}</h1>
+    <div class="col-md-6 col-lg">
+        <h1 class="">{{ title }}</h1>
     </div>
-{% endblock %}
+{% endblock header %}
+
 {% block content %}
 
     {# Modal de lancement #}
-    <div class="">
-        <div class="modal" id="MonModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
+    <div class="modal" id="MonModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
-                    {# Modal En-tête #}
-                    <div class="modal-header">
-                        <h4 class="modal-title"> Création du tournois</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    {# Modale body #}
-                    <div class="modal-body">
-                        <form action="{% url 'home' %}" method="POST" class="">
-                            {% csrf_token %}
-                            {{ forms.as_p }}
-                            <input type="submit" value="Créer" class="btn-success">
-                        </form>
-                    </div>
-
+                {# Modal En-tête#}
+                <div class="modal-header">
+                    <h4 class="modal-title"> Création du tournois</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-
-            </div>
-
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-
-            {# Tableau de joueaur #}
-            <div class="col-2 ">
-                <table class="table table-light">
-                    <thead class="thead-dark">
-                    <tr>
-                        <th>Joueur</th>
-                        <th>Nom</th>
-                        <th>Cave</th>
-                        <th>Recave</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    </thead>
-
-                </table>
-
-            </div>
-
-
-            {# Affichage de Temps Ecouler et saisie temps et nombre de joueurs #}
-            <div class="col-8 border" id="TempsManager">
-                <div class="row justify-content-center">
-                    <form action="{% url 'home' %}" class="mt-3">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MonModal">
-                            Création
-                            Tournois
-                        </button>
-
-                        <div class="container">
-                            <div class="display-3  mt-2" id="TempEcouler">00:00:00</div>
-                        </div>
-                        <div class="">
-                            <input type="submit" class="button" value="START">
-                            <input type="submit" class="button" value="PAUSE">
-                            <input type="submit" class="button" value="STOP">
-                        </div>
+                {# Modale body#}
+                <div class="modal-body">
+                    <form action="{% url 'home' %}" method="POST" class="">
+                        {% csrf_token %}
+                        {{ forms.as_p }}
+                        <input type="submit" value="Créer" class="btn-success">
                     </form>
                 </div>
-
-
-            </div>
-
-            {# Tableau Gains #}
-            <div class="col-2">
-                <table class="table small table-striped table-light table-bordered">
-                    <thead class="thead-dark">
-                    <tr>
-                        <th>
-                            Place
-                        </th>
-                        <th>
-                            Gains
-                        </th>
-                        <th>
-                            %
-                        </th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>
-                            1er
-                        </td>
-                        <td>
-                            50
-                        </td>
-                        <td>
-                            0%
-                        </td>
-                    <tr>
-                        <td>
-                            2éme
-                        </td>
-                        <td>
-                            0
-                        </td>
-                        <td>
-                            0%
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            3éme
-                        </td>
-                        <td>
-                            0
-                        </td>
-                        <td>
-                            0%
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            4éme
-                        </td>
-                        <td>
-                            0
-                        </td>
-                        <td>
-                            0%
-                        </td>
-                    </tr>
-
-                    </tbody>
-                </table>
-
             </div>
         </div>
+    </div>
+
+    {# Tableau de joueaur #}
+    <div class=" col-xl-2 col-md-12 small">
+        <H3>Joueurs</H3>
+        <table class="table table-sm table-striped table-light table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Nom</th>
+                <th>Cave</th>
+                <th>Recave</th>
+            </tr>
+            <tr>
+                <td>Joe Dupont</td>
+                <td>10</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Jeanette Dupont</td>
+                <td>10</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>10</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Jane Doe</td>
+                <td>10</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </thead>
+
+        </table>
+
+    </div>
+
+    {# Affichage de Temps Ecouler et saisie temps et nombre de joueurs#}
+    <div class="col border " id="TempsManager">
+        <form action="{% url 'home' %}" class="mt-3 ">
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MonModal">
+                    Création Tournois
+                </button>
+            </div>
+
+
+
+            <div class="row">
+                 <div class="col-2 text-center">Petite Blinds</div>
+                <div class="col text-center display-3 mt-2" id="TempEcouler">00:00:00</div>
+                <div class="col-2 text-center">Gros Blinds</div>
+            </div>
+
+
+
+            <div class="input-group justify-content-center">
+                <div class="">
+                    <input type="submit" class="button" value="START">
+                    <input type="submit" class="button" value="PAUSE">
+                    <input type="submit" class="button" value="STOP">
+                </div>
+
+            </div>
+            <div class="text-center">
+                <div class="display-4 d-inline mt-2 mr-2" id="PostTempBreak">00:00:00</div>
+                <div class="display-4 d-inline mt-2 mr-2" id="PostTempBreak1">00:00:00</div>
+            </div>
+        </form>
+    </div>
+
+    {# Tableau Gains #}
+    <div class="col-xl-2 col-md-12 small">
+        <H3>Gains</H3>
+        <table class="table table-sm table-striped table-light table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>
+                    Place
+                </th>
+                <th>
+                    Gains
+                </th>
+                <th>
+                    %
+                </th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    1er
+                </td>
+                <td>
+                    50
+                </td>
+                <td>
+                    0%
+                </td>
+            <tr>
+                <td>
+                    2éme
+                </td>
+                <td>
+                    0
+                </td>
+                <td>
+                    0%
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3éme
+                </td>
+                <td>
+                    0
+                </td>
+                <td>
+                    0%
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    4éme
+                </td>
+                <td>
+                    0
+                </td>
+                <td>
+                    0%
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
     </div>
 
     {# Tableau des blinds #}
-    <div class="row mt-3">
-        <div class="col-6">
-            <h3>Les blinds:</h3>
-            <table class="table table-bordered table-sm table-light small text-center">
-                <thead class="thead-dark ">
-                <tr>
-                    <th>Temps</th>
-                    <th>Small blind</th>
-                    <th>Big blind</th>
-                </tr>
+    <div class="col-xl-6 small">
+        <h3>Les blinds:</h3>
+        <table class="table table-sm table-striped table-light table-bordered">
+            <thead class="thead-dark ">
+            <tr>
+                <th>Temps</th>
+                <th>Small blind</th>
+                <th>Big blind</th>
+            </tr>
 
-                </thead>
-                <tbody>
-                <tr>
-                    <td id="tempOfBlind0"></td>
-                    <td>
-                        <label>
-                            <input class="d-inline small " type="number" min="0" value="0">
-                        </label>
-                    </td>
-                    <td>{{ valeurBigBlind }}</td>
-                </tr>
-                <tr>
-                    <td id="TempOfBlind1">{{ valeurTemp }}</td>
-                    <td>
-                        <label>
-                            <input class="d-inline small " type="number" min="0" value="0">
-                        </label>
-                    </td>
-                    <td>{{ valeurBigBlind }}</td>
-                </tr>
-                <tr>
-                    <td>{{ valeurTemp }}</td>
-                    <td>
-                        <label>
-                            <input class="d-inline small " type="number" min="0" value="0">
-                        </label></td>
-                    <td>{{ valeurBigBlind }}</td>
-                </tr>
-                <tr>
-                    <td>{{ valeurTemp }}</td>
-                    <td>
-                        <label>
-                            <input class="d-inline small " type="number" min="0" value="0">
-                        </label>
-                    </td>
+            </thead>
+            <tbody>
+            <tr>
+                <td id="tempOfBlind0"></td>
+                <td>
+                    <label>
+                        <input class="d-inline small " type="number" min="0" value="0">
+                    </label>
+                </td>
+                <td>{{ valeurBigBlind }}</td>
+            </tr>
+            <tr>
+                <td id="TempOfBlind1">{{ valeurTemp }}</td>
+                <td>
+                    <label>
+                        <input class="d-inline small " type="number" min="0" value="0">
+                    </label>
+                </td>
+                <td>{{ valeurBigBlind }}</td>
+            </tr>
+            <tr>
+                <td>{{ valeurTemp }}</td>
+                <td>
+                    <label>
+                        <input class="d-inline small " type="number" min="0" value="0">
+                    </label></td>
+                <td>{{ valeurBigBlind }}</td>
+            </tr>
+            <tr>
+                <td>{{ valeurTemp }}</td>
+                <td>
+                    <label>
+                        <input class="d-inline small " type="number" min="0" value="0">
+                    </label>
+                </td>
 
-                    <td>{{ valeurBigBlind }}</td>
-                </tr>
-                <tr>
-                    <td>{{ valeurTemp }}</td>
-                    <td>
-                        <label>
-                            <input class="d-inline small " type="number" min="0" value="0">
-                        </label>
-                    </td>
-                    <td>{{ valeurBigBlind }}</td>
-                </tr>
-                <tr>
-                    <td>{{ valeurTemp }}</td>
-                    <td>
-                        <label>
-                            <input class="d-inline small " type="number" min="0" value="0">
-                        </label>
-                    </td>
-                    <td>{{ valeurBigBlind }}</td>
-                </tr>
-                <tr>
-                    <td>{{ valeurTemp }}</td>
-                    <td>
-                        <label>
-                            <input class="d-inline small " type="number" min="0" value="0">
-                        </label>
-                    </td>
-                    <td>{{ valeurBigBlind }}</td>
-                </tr>
-                <tr>
-                    <td>{{ valeurTemp }}</td>
-                    <td>
-                        <label>
-                            <input class="d-inline small " type="number" min="0" value="0">
-                        </label>
-                    </td>
-                    <td>{{ valeurBigBlind }}</td>
-                </tr>
+                <td>{{ valeurBigBlind }}</td>
+            </tr>
+            <tr>
+                <td>{{ valeurTemp }}</td>
+                <td>
+                    <label>
+                        <input class="d-inline small " type="number" min="0" value="0">
+                    </label>
+                </td>
+                <td>{{ valeurBigBlind }}</td>
+            </tr>
+            <tr>
+                <td>{{ valeurTemp }}</td>
+                <td>
+                    <label>
+                        <input class="d-inline small " type="number" min="0" value="0">
+                    </label>
+                </td>
+                <td>{{ valeurBigBlind }}</td>
+            </tr>
+            <tr>
+                <td>{{ valeurTemp }}</td>
+                <td>
+                    <label>
+                        <input class="d-inline small " type="number" min="0" value="0">
+                    </label>
+                </td>
+                <td>{{ valeurBigBlind }}</td>
+            </tr>
+            <tr>
+                <td>{{ valeurTemp }}</td>
+                <td>
+                    <label>
+                        <input class="d-inline small " type="number" min="0" value="0">
+                    </label>
+                </td>
+                <td>{{ valeurBigBlind }}</td>
+            </tr>
 
 
-                </tbody>
+            </tbody>
 
-            </table>
-        </div>
-        {# Tableau jetons #}
-        <div class="col-6">
-            <h3>Jetons</h3>
-            <table class="table table-bordered table-light table-sm small text-center">
-                <thead class="thead-dark text-center">
-                <tr>
-                    <th>Couleurs</th>
-                    <th>Valeurs</th>
-                    <th>Nombres de jetons</th>
-                    <th>Total</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td id="testColor0">
-                        <label for="color0">
-                            <select id="color0" class="col-12">
-                                <option value="rouge" class="optRouge">Rouge</option>
-                                <option value="bleu" class="optBleu">Bleu</option>
-                                <option value="orange" class="optOrange">Orange</option>
-                                <option value="vert" class="optVert">Vert</option>
-                                <option value="noir" class="optNoir">Noir</option>
-                                <option value="marron" class="optMarron">Marron</option>
-                            </select>
-                        </label>
+        </table>
+    </div>
 
-                    </td>
-                    <td>5</td>
-                    <td>20</td>
-                    <td>100</td>
-                </tr>
-                <tr>
-                    <td id="testColor1">
-                        <label for="color1">
-                            <select id="color1" class="col-12">
-                                <option value="rouge" class="optRouge">Rouge</option>
-                                <option value="bleu" class="optBleu">Bleu</option>
-                                <option value="orange" class="optOrange">Orange</option>
-                                <option value="vert" class="optVert">Vert</option>
-                                <option value="noir" class="optNoir">Noir</option>
-                                <option value="marron" class="optMarron">Marron</option>
-                            </select>
-                        </label>
+    {# Tableau jetons #}
+    <div class="col-xl-6 small">
+        <h3>Jetons</h3>
+        <table class="table table-sm table-striped table-light table-bordered">
+            <thead class="thead-dark text-center">
+            <tr>
+                <th>Couleurs</th>
+                <th>Valeurs</th>
+                <th>Nombres de jetons</th>
+                <th>Total</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td id="testColor0">
+                    <label for="color0">
+                        <select id="color0" class="col-12">
+                            <option value="rouge" class="optRouge">Rouge</option>
+                            <option value="bleu" class="optBleu">Bleu</option>
+                            <option value="orange" class="optOrange">Orange</option>
+                            <option value="vert" class="optVert">Vert</option>
+                            <option value="noir" class="optNoir">Noir</option>
+                            <option value="marron" class="optMarron">Marron</option>
+                        </select>
+                    </label>
 
-                    </td>
-                    <td>10</td>
-                    <td>20</td>
-                    <td>200</td>
-                </tr>
-                <tr>
-                    <td class="">
-                        <label for="color2">
-                            <select id="color2" class="col-12">
-                                <option value="rouge" class="optRouge">Rouge</option>
-                                <option value="bleu" class="optBleu">Bleu</option>
-                                <option value="orange" class="optOrange">Orange</option>
-                                <option value="vert" class="optVert">Vert</option>
-                                <option value="noir" class="optNoir">Noir</option>
-                                <option value="marron" class="optMarron">Marron</option>
-                            </select>
-                        </label>
+                </td>
+                <td>5</td>
+                <td>20</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td id="testColor1">
+                    <label for="color1">
+                        <select id="color1" class="col-12">
+                            <option value="rouge" class="optRouge">Rouge</option>
+                            <option value="bleu" class="optBleu">Bleu</option>
+                            <option value="orange" class="optOrange">Orange</option>
+                            <option value="vert" class="optVert">Vert</option>
+                            <option value="noir" class="optNoir">Noir</option>
+                            <option value="marron" class="optMarron">Marron</option>
+                        </select>
+                    </label>
 
-                    </td>
-                    <td>25</td>
-                    <td>10</td>
-                    <td>250</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="color3">
-                            <select id="color3" class="col-12">
-                                <option value="rouge" class="optRouge">Rouge</option>
-                                <option value="bleu" class="optBleu">Bleu</option>
-                                <option value="orange" class="optOrange">Orange</option>
-                                <option value="vert" class="optVert">Vert</option>
-                                <option value="noir" class="optNoir">Noir</option>
-                                <option value="marron" class="optMarron">Marron</option>
-                            </select>
-                        </label>
+                </td>
+                <td>10</td>
+                <td>20</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td class="">
+                    <label for="color2">
+                        <select id="color2" class="col-12">
+                            <option value="rouge" class="optRouge">Rouge</option>
+                            <option value="bleu" class="optBleu">Bleu</option>
+                            <option value="orange" class="optOrange">Orange</option>
+                            <option value="vert" class="optVert">Vert</option>
+                            <option value="noir" class="optNoir">Noir</option>
+                            <option value="marron" class="optMarron">Marron</option>
+                        </select>
+                    </label>
 
-                    </td>
-                    <td>50</td>
-                    <td>10</td>
-                    <td>500</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="color4">
-                            <select id="color4" class="col-12">
-                                <option value="rouge" class="optRouge">Rouge</option>
-                                <option value="bleu" class="optBleu">Bleu</option>
-                                <option value="orange" class="optOrange">Orange</option>
-                                <option value="vert" class="optVert">Vert</option>
-                                <option value="noir" class="optNoir">Noir</option>
-                                <option value="marron" class="optMarron">Marron</option>
-                            </select>
-                        </label>
+                </td>
+                <td>25</td>
+                <td>10</td>
+                <td>250</td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="color3">
+                        <select id="color3" class="col-12">
+                            <option value="rouge" class="optRouge">Rouge</option>
+                            <option value="bleu" class="optBleu">Bleu</option>
+                            <option value="orange" class="optOrange">Orange</option>
+                            <option value="vert" class="optVert">Vert</option>
+                            <option value="noir" class="optNoir">Noir</option>
+                            <option value="marron" class="optMarron">Marron</option>
+                        </select>
+                    </label>
 
-                    </td>
-                    <td>100</td>
-                    <td>10</td>
-                    <td>1000</td>
-                </tr>
-                <tr>
-                    <td>Totaux</td>
-                    <td></td>
-                    <td></td>
-                    <td>2050</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+                </td>
+                <td>50</td>
+                <td>10</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="color4">
+                        <select id="color4" class="col-12">
+                            <option value="rouge" class="optRouge">Rouge</option>
+                            <option value="bleu" class="optBleu">Bleu</option>
+                            <option value="orange" class="optOrange">Orange</option>
+                            <option value="vert" class="optVert">Vert</option>
+                            <option value="noir" class="optNoir">Noir</option>
+                            <option value="marron" class="optMarron">Marron</option>
+                        </select>
+                    </label>
 
+                </td>
+                <td>100</td>
+                <td>10</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>Totaux</td>
+                <td></td>
+                <td></td>
+                <td>2050</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
 {% endblock content %}

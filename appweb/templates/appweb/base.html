@@ -20,9 +20,10 @@
 
 
 </head>
-<body>
-{# HEADER #}
-<header>
+<body class="container-fluid">
+
+<!--Header -->
+<header class="row text-center">
     {% block header %}
 
     {% endblock header %}
@@ -34,15 +35,16 @@
     {% endblock content %}
 </div>
 
-{# FOOTER #}
 
-<footer class="card-footer text-center mb-0">
-    <div>
-        <p>Auteur: {{ author }} version: {{ version }} </p>
+<!-- Footer -->
+<footer class="container-fluid" >
+    <div class="row text-center">
+        <div class="col card-footer m-2">
+            <p>Auteur: {{ author }} version: {{ version }} </p>
+        </div>
     </div>
 
 </footer>
-
 
 <!-- Option JavaScript -->
 
@@ -59,7 +61,6 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 <script src="{% static 'appweb/js/mgPocker.js' %}"></script>
-
 
 </body>
 </html>
