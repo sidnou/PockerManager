@@ -34,8 +34,14 @@ select {
 #TempEcouler {
     font-family: 'Saira Stencil One', cursive;
     color: black;
+    font-size: 4em;
 }
 
+#smallBlindsNow ,#bigBlindsNow{
+    font-family: 'Saira Stencil One', cursive;
+    color: white;
+    font-size: 6em;
+}
 .optNoir {
     background: black;
     color: white;
