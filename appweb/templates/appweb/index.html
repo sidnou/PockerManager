@@ -41,7 +41,7 @@
     </div>
     <div class="row">
         {# Tableau de joueaur #}
-        <div class=" col-xl-2 col-md-12 small">
+        <div class=" col-lg-2 small">
             <H3>Joueurs</H3>
             <table class="table table-sm table-striped table-light table-bordered">
                 <thead class="thead-dark">
@@ -90,11 +90,8 @@
         <div class="col border " id="TempsManager">
             <form action="{% url 'home' %}" class="mt-3 ">
                 <div class="text-center">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MonModal">
-                        Création Tournois
-                    </button>
+                    <input type="button" class="btn btn-primary" data-toggle="modal" data-target="#MonModal" value="Création Tournois">
                 </div>
-
 
                 <div class="row">
                     <div class="col-4 text-center" id="smallBlindsNow" >100</div>
@@ -119,7 +116,7 @@
         </div>
 
         {# Tableau Gains #}
-        <div class="col-xl-2 col-md-12 small">
+        <div class="col-lg-2 small">
             <H3>Gains</H3>
             <table class="table table-sm table-striped table-light table-bordered">
                 <thead class="thead-dark">
