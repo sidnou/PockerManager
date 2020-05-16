@@ -9,7 +9,7 @@
 {% block content %}
 
     {# Modal de lancement #}
-    <div class="modal" id="MonModal">
+    <div class="modal" id="MonModal" >
         <div class="modal-dialog">
             <div class="modal-content">
 
@@ -52,22 +52,22 @@
                 </tr>
                 <tr>
                     <td>Joe Dupont</td>
-                    <td>10 €</td>
+                    <td>{{ cave }} €</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Jeanette Dupont</td>
-                    <td>10 €</td>
+                    <td>{{ cave }} €</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>John Doe</td>
-                    <td>10 €</td>
+                    <td>{{ cave }} €</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Jane Doe</td>
-                    <td>10 €</td>
+                    <td>{{ cave }} €</td>
                     <td></td>
                 </tr>
                 <tr>
@@ -102,9 +102,9 @@
 
                 <div class="input-group justify-content-center">
                     <div class="">
-                        <input type="submit" class="button" value="START">
-                        <input type="submit" class="button" value="PAUSE">
-                        <input type="submit" class="button" value="STOP">
+                        <button type="button" class="button" value="START">START</button>
+                        <button type="button" class="button" value="">PAUSE</button>
+                        <button type="button" class="button" value="">STOP</button>
                     </div>
 
                 </div>
@@ -200,7 +200,7 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td id="tempOfBlind0"></td>
+                    <td id="tempOfBlind0">{{ valeurTemp }}</td>
                     <td>
                         <label>
                             <input class="d-inline small " type="number" min="0" value="0">

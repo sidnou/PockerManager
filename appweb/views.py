@@ -18,8 +18,8 @@ def index(request):
         'valeurTemp': "00h15",
         'valeurSmBlind': "5",
         'valeurBigBlind': "10",
+        'cave': "",
         'forms': "",
-
     }
     # Verification de method P
     if request.method == 'POST':
@@ -37,14 +37,15 @@ def index(request):
             # Cave
             cave = form.cleaned_data['cave']
             print(cave)
+            content['cave'] = cave
             # Temps limit recave
             t_recave = form.cleaned_data['temps_recave']
 
             add_tournois = Tournois(nombre_joueur=n_gamer, temps_blinds=t_blinds, cave=cave, temps_recave=t_recave)
             add_tournois.save()  # savegarde dans la tableau Tournois
 
-        # return render(request,'appweb/index.html', content)
-        return HttpResponseRedirect(reverse('home'))
+            return render(request,'appweb/index.html', content)
+        # return HttpResponseRedirect(reverse('home'))
 
     else:
         form = FormModulaTournoi()
