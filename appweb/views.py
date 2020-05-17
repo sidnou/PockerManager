@@ -1,6 +1,4 @@
 from django.shortcuts import render
-from django.urls import reverse
-from django.http import HttpResponseRedirect
 from appweb.forms import *
 from appweb.models import Tournois
 
@@ -20,6 +18,7 @@ def index(request):
         'valeurBigBlind': "10",
         'cave': "",
         'forms': "",
+        'visibleBtnCreatTourn': 1,
     }
     # Verification de method P
     if request.method == 'POST':
@@ -41,40 +40,17 @@ def index(request):
             # Temps limit recave
             t_recave = form.cleaned_data['temps_recave']
 
-            add_tournois = Tournois(nombre_joueur=n_gamer, temps_blinds=t_blinds, cave=cave, temps_recave=t_recave)
-            add_tournois.save()  # savegarde dans la tableau Tournois
-
-            return render(request,'appweb/index.html', content)
-        # return HttpResponseRedirect(reverse('home'))
+            add_tournois = Tournois(id=1, nombre_joueur=n_gamer, temps_blinds=t_blinds, cave=cave,
+                                    temps_recave=t_recave)
+            add_tournois.save()  # sauvegarde dans la tableau Tournois sur le 1 ligne
+            content['visibleBtnCreatTourn'] = 0  # 0 = n'affiche pas le bouton Création Tournois
+            return render(request, 'appweb/index.html', content)
 
     else:
         form = FormModulaTournoi()
         content['forms'] = form
 
     return render(request, 'appweb/index.html', content)
-
-
-def create_tournois(request):
-    content = {
-        'title': "Poker Manager",
-        'version': VERSION,
-        'author': AUTHOR,
-        'forms': "",
-    }
-
-    # Verification de method POST
-    if request.method == 'POST':
-        form = FormModulaTournoi(request.POST)
-        print(form)
-        content['forms'] = form
-
-        if form.is_valid():
-            return HttpResponseRedirect(reverse('home'))
-    else:
-        form = FormModulaTournoi()
-        content['forms'] = form
-
-    return render(request, 'appweb/create-tournoi.html', content)
 
 
 ##################################################################################################################

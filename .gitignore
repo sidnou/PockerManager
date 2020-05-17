@@ -3,3 +3,4 @@
 /venv/
 /.idea/
 /.run/
+/appweb/migrations/0001_initial.py

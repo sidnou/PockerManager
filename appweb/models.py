@@ -11,7 +11,6 @@ class Joueurs(models.Model):
     nom_joueur = models.CharField(max_length=25)
 
 
-
 # Tableau Jetons
 class Jetons(models.Model):
     color = models.CharField(choices=COLOR_JETONS, max_length=25)
@@ -32,7 +31,6 @@ class Tournois(models.Model):
     temps_blinds = models.TimeField(null=True)
     cave = models.IntegerField(null=True)
     temps_recave = models.TimeField(null=True)
-
 
 # # Tableau journal Poker Manager
 # class PokerManagerLog(models.Model):
