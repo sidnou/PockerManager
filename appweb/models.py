@@ -20,7 +20,7 @@ class Jetons(models.Model):
 
 # Tebleau Blinds
 class Blinds(models.Model):
-    times = models.TimeField()
+    times_up_blinds = models.TimeField()
     smallBlind = models.IntegerField()
     bigBlind = models.IntegerField()
 
