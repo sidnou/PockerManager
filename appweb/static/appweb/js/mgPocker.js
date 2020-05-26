@@ -1,138 +1,48 @@
 //Fonction changer coleur arrière plan du tag select
-function bgcolor() {
-    let colorSelect0 = $('#color0').val();
-    if (colorSelect0 === "rouge") {
-        console.log(colorSelect0);
-        $('#color0').css('background', 'red');
-    } else if (colorSelect0 === "vert") {
-        console.log(colorSelect0);
-        $('#color0').css('background', 'green');
-    } else if (colorSelect0 === "orange") {
-        console.log(colorSelect0);
-        $('#color0').css('background', 'orange');
-    } else if (colorSelect0 === "bleu") {
-        console.log(colorSelect0);
-        $('#color0').css('background', 'blue');
-    } else if (colorSelect0 === "marron") {
-        console.log(colorSelect0);
-        $('#color0').css('background', 'brown');
-    } else if (colorSelect0 === "noir") {
-        console.log(colorSelect0);
-        $('#color0').css('background', 'black');
+function backgroundColor() {
+    const colorJetons = ["color0", "color1", "color2", "color3", "color4"];
+    for (const element of colorJetons) {
+        // console.log(element);
+        let colorSelect = $(`#${element}`).val();
+        console.log(colorSelect);
+        if (colorSelect === "rouge") {
+            // console.log(colorSelect);
+            $('#' + element).css('background', 'red');
+        } else if (colorSelect === "vert") {
+            // console.log(colorSelect);
+            $('#' + element).css('background', 'green');
+        } else if (colorSelect === "orange") {
+            // console.log(colorSelect);
+            $('#' + element).css('background', 'orange');
+        } else if (colorSelect === "bleu") {
+            // console.log(colorSelect);
+            $('#' + element).css('background', 'blue');
+        } else if (colorSelect === "marron") {
+            // console.log(colorSelect);
+            $('#' + element).css('background', 'brown');
+        } else if (colorSelect === "noir") {
+            // console.log(colorSelect);
+            $('#' + element).css('background', 'black');
+        }
     }
-
-    let colorSelect1 = $('#color1').val();
-    if (colorSelect1 === "rouge") {
-        console.log(colorSelect1);
-        $('#color1').css('background', 'red');
-    } else if (colorSelect1 === "vert") {
-        console.log(colorSelect1);
-        $('#color1').css('background', 'green');
-    } else if (colorSelect1 === "orange") {
-        console.log(colorSelect1);
-        $('#color1').css('background', 'orange');
-    } else if (colorSelect1 === "bleu") {
-        console.log(colorSelect1);
-        $('#color1').css('background', 'blue');
-    } else if (colorSelect1 === "marron") {
-        console.log(colorSelect1);
-        $('#color1').css('background', 'brown');
-    } else if (colorSelect1 === "noir") {
-        console.log(colorSelect1);
-        $('#color1').css('background', 'black');
-    }
-
-    let colorSelect2 = $('#color2').val();
-    if (colorSelect2 === "rouge") {
-        console.log(colorSelect2);
-        $('#color2').css('background', 'red');
-    } else if (colorSelect2 === "vert") {
-        console.log(colorSelect2);
-        $('#color2').css('background', 'green');
-    } else if (colorSelect2 === "orange") {
-        console.log(colorSelect2);
-        $('#color2').css('background', 'orange');
-    } else if (colorSelect2 === "bleu") {
-        console.log(colorSelect2);
-        $('#color2').css('background', 'blue');
-    } else if (colorSelect2 === "marron") {
-        console.log(colorSelect2);
-        $('#color2').css('background', 'brown');
-    } else if (colorSelect2 === "noir") {
-        console.log(colorSelect2);
-        $('#color2').css('background', 'black');
-    }
-
-    let colorSelect3 = $('#color3').val();
-    if (colorSelect3 === "rouge") {
-        console.log(colorSelect3);
-        $('#color3').css('background', 'red');
-    } else if (colorSelect3 === "vert") {
-        console.log(colorSelect3);
-        $('#color3').css('background', 'green');
-    } else if (colorSelect3 === "orange") {
-        console.log(colorSelect3);
-        $('#color3').css('background', 'orange');
-    } else if (colorSelect3 === "bleu") {
-        console.log(colorSelect3);
-        $('#color3').css('background', 'blue');
-    } else if (colorSelect3 === "marron") {
-        console.log(colorSelect3);
-        $('#color3').css('background', 'brown');
-    } else if (colorSelect3 === "noir") {
-        console.log(colorSelect3);
-        $('#color3').css('background', 'black');
-    }
-
-    let colorSelect4 = $('#color4').val();
-    if (colorSelect4 === "rouge") {
-        console.log(colorSelect4);
-        $('#color4').css('background', 'red');
-    } else if (colorSelect4 === "vert") {
-        console.log(colorSelect4);
-        $('#color4').css('background', 'green');
-    } else if (colorSelect4 === "orange") {
-        console.log(colorSelect4);
-        $('#color4').css('background', 'orange');
-    } else if (colorSelect4 === "bleu") {
-        console.log(colorSelect4);
-        $('#color4').css('background', 'blue');
-    } else if (colorSelect4 === "marron") {
-        console.log(colorSelect4);
-        $('#color4').css('background', 'brown');
-    } else if (colorSelect4 === "noir") {
-        console.log(colorSelect4);
-        $('#color4').css('background', 'black');
-    }
-
 }
 
+$(backgroundColor);
+// Execution de boucle for les changement de la couleur des jetons
+const colorJetons = ["color0", "color1", "color2", "color3", "color4"];
+for (const colorJeton of colorJetons) {
+    // console.log(colorJeton)
+    const selectElement = document.getElementById(colorJeton);
+    selectElement.addEventListener('change', () =>  {
+        backgroundColor();
+    });
 
-$(document).ready(bgcolor);
-$('#color0').change(bgcolor);
-$('#color1').change(bgcolor);
-$('#color2').change(bgcolor);
-$('#color3').change(bgcolor);
-$('#color4').change(bgcolor);
+}
 
 // fonction temps blinds
 function tempsBlind() {
-    var tblinds = $('#tempBlinds').val();
+    let tblinds = document.getElementById('tempBlinds').innerHTML; // Récupère la valeur "valeurTemp"
     console.log(tblinds);
-    $('#tempOfBlind0').html(tblinds);
-
 
 }
-
-$(document).ready(tempsBlind);
-$('#tempBlinds').change(tempsBlind);
-
-function backgroundColor() {
-    const color = ["red","vert","orange"]
-    for (let argument of 5) {
-        for (var argumentElement of color) {
-            
-        }
-    }
-
-}
+tempsBlind()

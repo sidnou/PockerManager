@@ -24,7 +24,6 @@
                         {% load bootstrap4 %}
                         <form action="{% url 'home' %}" method="POST" class="form">
                             {% csrf_token %}
-                            {#                        {{ forms}}#}
                             {% bootstrap_form forms %}
                             <div class="text-right">
                                 {% buttons %}
@@ -202,16 +201,16 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td id="tempOfBlind0">{{ valeurTemp }}</td>
-                    <td>
+                    <td id="tempBlinds">{{ valeurTemp }}</td>
+                    <td class="smallBlinds">
                         <label>
-                            <input class="d-inline small " type="number" min="0" value="0">
+                            <input class="d-inline small " type="number" min="0" value="0" >
                         </label>
                     </td>
                     <td>{{ valeurBigBlind }}</td>
                 </tr>
                 <tr>
-                    <td id="TempOfBlind1">{{ valeurTemp }}</td>
+                    <td id="TempfBlind1">{{ valeurTemp }}</td>
                     <td>
                         <label>
                             <input class="d-inline small " type="number" min="0" value="0">
@@ -271,7 +270,7 @@
                             <input class="d-inline small " type="number" min="0" value="0">
                         </label>
                     </td>
-                    <td>{{ valeurBigBlind }}</td>
+                    <td class="bigBlinds"> {{ valeurBigBlind }}</td>
                 </tr>
 
 
@@ -293,10 +292,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td id="testColor0">
+                <tr class="text-lg-center">
+                    <td >
                         <label for="color0">
-                            <select id="color0" class="col-12">
+                            <select id="color0" class="color-jeton col-12">
                                 <option value="rouge" class="optRouge">Rouge</option>
                                 <option value="bleu" class="optBleu">Bleu</option>
                                 <option value="orange" class="optOrange">Orange</option>
@@ -311,10 +310,10 @@
                     <td>20</td>
                     <td>100</td>
                 </tr>
-                <tr>
-                    <td id="testColor1">
+                <tr class="text-lg-center">
+                    <td >
                         <label for="color1">
-                            <select id="color1" class="col-12">
+                            <select id="color1" class="color-jeton col-12">
                                 <option value="rouge" class="optRouge">Rouge</option>
                                 <option value="bleu" class="optBleu">Bleu</option>
                                 <option value="orange" class="optOrange">Orange</option>
@@ -329,10 +328,10 @@
                     <td>20</td>
                     <td>200</td>
                 </tr>
-                <tr>
-                    <td class="">
+                <tr class="text-lg-center">
+                    <td >
                         <label for="color2">
-                            <select id="color2" class="col-12">
+                            <select id="color2" class="color-jeton col-12">
                                 <option value="rouge" class="optRouge">Rouge</option>
                                 <option value="bleu" class="optBleu">Bleu</option>
                                 <option value="orange" class="optOrange">Orange</option>
@@ -347,10 +346,10 @@
                     <td>10</td>
                     <td>250</td>
                 </tr>
-                <tr>
-                    <td>
+                <tr class="text-lg-center">
+                    <td >
                         <label for="color3">
-                            <select id="color3" class="col-12">
+                            <select id="color3" class="color-jeton col-12">
                                 <option value="rouge" class="optRouge">Rouge</option>
                                 <option value="bleu" class="optBleu">Bleu</option>
                                 <option value="orange" class="optOrange">Orange</option>
@@ -365,10 +364,10 @@
                     <td>10</td>
                     <td>500</td>
                 </tr>
-                <tr>
+                <tr class="text-lg-center">
                     <td>
                         <label for="color4">
-                            <select id="color4" class="col-12">
+                            <select id="color4" class="color-jeton col-12">
                                 <option value="rouge" class="optRouge">Rouge</option>
                                 <option value="bleu" class="optBleu">Bleu</option>
                                 <option value="orange" class="optOrange">Orange</option>
@@ -383,7 +382,7 @@
                     <td>10</td>
                     <td>1000</td>
                 </tr>
-                <tr>
+                <tr class="text-lg-center">
                     <td>Totaux</td>
                     <td></td>
                     <td></td>
