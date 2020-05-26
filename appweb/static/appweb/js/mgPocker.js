@@ -107,6 +107,7 @@ function bgcolor() {
 
 }
 
+
 $(document).ready(bgcolor);
 $('#color0').change(bgcolor);
 $('#color1').change(bgcolor);
@@ -126,4 +127,12 @@ function tempsBlind() {
 $(document).ready(tempsBlind);
 $('#tempBlinds').change(tempsBlind);
 
+function backgroundColor() {
+    const color = ["red","vert","orange"]
+    for (let argument of 5) {
+        for (var argumentElement of color) {
+            
+        }
+    }
 
+}
