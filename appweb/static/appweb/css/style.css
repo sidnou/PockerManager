@@ -23,15 +23,15 @@ select {
     text-align: center;
 }
 
-#MonModal p {
+#modal-reation-tournois p {
     color: black;
 }
 
-#TempsManager {
+#temps-manager {
     height: 20em;
 }
 
-#TempEcouler {
+#temp-ecouler {
     font-family: 'Saira Stencil One', cursive;
     color: black;
     font-size: 4em;

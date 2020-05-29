@@ -9,7 +9,7 @@
 {% block content %}
 
     {# Modal de lancement #}
-    <div class="modal" id="MonModal" >
+    <div class="modal" id="modal-reation-tournois">
         <div class="modal-dialog">
             <div class="modal-content">
 
@@ -86,7 +86,7 @@
         </div>
 
         {# Affichage de Temps Ecouler et saisie temps et nombre de joueurs#}
-        <div class="col border " id="TempsManager">
+        <div class="col border " id="temps-manager">
             <form action="{% url 'home' %}" class="mt-3 ">
                 {% if visibleBtnCreatTourn %}
                  <div class="text-center">
@@ -96,7 +96,7 @@
 
                 <div class="row">
                     <div class="col-4 text-center" id="smallBlindsNow" >100</div>
-                    <div class="col text-center display-3 mt-2" id="TempEcouler">99:99:99</div>
+                    <div class="col text-center display-3 mt-2" id="temp-ecouler">99:99:99</div>
                     <div class="col-4 text-center display-1" id="bigBlindsNow">200</div>
                 </div>
 
@@ -110,8 +110,8 @@
 
                 </div>
                 <div class="text-center">
-                    <div class="display-4 d-inline mt-2 mr-2" id="PostTempBreak">00:00:00</div>
-                    <div class="display-4 d-inline mt-2 mr-2" id="PostTempBreak1">00:00:00</div>
+                    <div class="display-4 d-inline mt-2 mr-2" id="post-temp-break">00:00:00</div>
+                    <div class="display-4 d-inline mt-2 mr-2" id="post-temp-break1">00:00:00</div>
                 </div>
             </form>
         </div>
